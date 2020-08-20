@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/csmjunior/git-alias-react.git",
   "scripts": {
     "test": "jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
