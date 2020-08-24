@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import Styles from './form-status-styles.scss'
 import Spinner from '@/presentation/components/spinner/spinner'
 
@@ -12,4 +12,4 @@ const FormStatus: React.FC = () => {
   )
 }
 
-export default memo(FormStatus)
+export default FormStatus
