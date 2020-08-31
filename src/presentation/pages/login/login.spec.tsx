@@ -91,7 +91,6 @@ describe('Login Component', () => {
     const { sut } = makeSut()
     populateEmailField(sut)
     simulateStatusForField(sut, 'password')
-
     const submitButton = sut.getByTestId('submit') as HTMLButtonElement
     expect(submitButton.disabled).toBe(false)
   })
