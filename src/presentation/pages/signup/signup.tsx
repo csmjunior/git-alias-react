@@ -3,7 +3,7 @@ import Styles from './signup-styles.scss'
 import { LoginHeader, Footer, Input, FormStatus } from '@/presentation/components'
 import Context from '@/presentation/context/form/form-context'
 
-const Signup: React.FC = () => {
+const SignUp: React.FC = () => {
   const [state] = useState({
     isLoading: false,
     nameError: 'Campo obrigatório',
@@ -32,4 +32,4 @@ const Signup: React.FC = () => {
   )
 }
 
-export default Signup
+export default SignUp
