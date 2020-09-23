@@ -13,18 +13,27 @@ const makeSut = (fieldName: string): RenderResult => {
 }
 
 describe('Input Component', () => {
-  test('Shoul begin with readOnly', () => {
+  test('Should begin with readOnly', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
     const input = sut.getByTestId(field) as HTMLInputElement
     expect(input.readOnly).toBe(true)
   })
 
-  test('Shoul remover readOnly on focus', () => {
+  test('Should remover readOnly on focus', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
     const input = sut.getByTestId(field) as HTMLInputElement
     fireEvent.focus(input)
     expect(input.readOnly).toBe(false)
+  })
+
+  test('Should focus input on label click', () => {
+    const field = faker.database.column()
+    const sut = makeSut(field)
+    const input = sut.getByTestId(field)
+    const label = sut.getByTestId(`${field}-label`)
+    fireEvent.click(label)
+    expect(document.activeElement).toBe(input)
   })
 })
