@@ -6,12 +6,12 @@ const makeSut = (field: string, fieldToCompare: string): CompareFieldsValidation
 
 describe('CompareFieldsValidation', () => {
   test('Shold return error if compare is invalid', () => {
-    const field = faker.database.column()
-    const fieldToCompare = faker.database.column()
+    const field = 'any_value'
+    const fieldToCompare = 'other_field'
     const sut = makeSut(field, fieldToCompare)
     const error = sut.validate({
-      [field]: faker.random.word(),
-      [fieldToCompare]: faker.random.word()
+      [field]: 'any_value',
+      [fieldToCompare]: 'other_field'
     })
     expect(error).toEqual(new InvalidFieldError())
   })
