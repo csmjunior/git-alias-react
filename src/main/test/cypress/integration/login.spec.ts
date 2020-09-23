@@ -2,9 +2,13 @@ import * as FormHelper from '../support/form-helper'
 import * as Http from '../support/login-mocks'
 import faker from 'faker'
 
-const simulateValidsubmit = (): void => {
+const populateFields = (): void => {
   cy.getByTestId('email').focus().type(faker.internet.email())
   cy.getByTestId('password').focus().type(faker.random.alphaNumeric(5))
+}
+
+const simulateValidsubmit = (): void => {
+  populateFields()
   cy.getByTestId('submit').click()
 }
 
