@@ -1,1 +1,2 @@
-export { SetStorage } from './set-storage'
+export * from './set-storage'
+export * from './get-storage'
